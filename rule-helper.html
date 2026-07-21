@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Firestore 規則助手</title>
+<style>
+body{font-family:-apple-system,'PingFang TC',sans-serif;padding:16px;max-width:600px;margin:auto;background:#f0f4f8;line-height:1.6}
+.step{background:#fff;padding:16px;border-radius:12px;margin:12px 0;box-shadow:0 1px 3px rgba(0,0,0,0.1)}
+h1{font-size:22px;color:#1F3864}
+h2{font-size:17px;color:#1F3864;margin-bottom:10px}
+button{background:#C8102E;color:#fff;border:none;padding:16px;border-radius:10px;font-size:17px;font-weight:800;cursor:pointer;width:100%;margin-top:8px}
+.big{padding:20px;font-size:19px}
+.done{background:#2E7D32}
+.hint{color:#5A6B7E;font-size:14px}
+.step-num{background:#1F3864;color:#fff;padding:2px 10px;border-radius:12px;font-size:13px;font-weight:800;display:inline-block}
+pre{background:#f5f5f5;padding:10px;border-radius:6px;font-size:11px;overflow-x:auto;white-space:pre-wrap;word-break:break-all}
+</style>
+</head>
+<body>
+<h1>🔧 Firestore 規則助手</h1>
+<p class="hint">避開手機貼上「隱形字元」問題,一鍵複製乾淨規則</p>
+
+<div class="step">
+<h2><span class="step-num">1</span> 複製規則</h2>
+<p class="hint">按下面按鈕,規則會複製到剪貼簿(絕對乾淨、無隱形字元)</p>
+<button onclick="copyRule()" id="btn1" class="big">📋 複製規則</button>
+<pre id="rule">rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if request.auth != null;
+    }
+  }
+}</pre>
+</div>
+
+<div class="step">
+<h2><span class="step-num">2</span> 開啟 Firebase Console</h2>
+<button onclick="window.open('https://console.firebase.google.com/project/yuanziifamily/firestore/rules', '_blank')">🔗 開啟規則頁面</button>
+<p class="hint">會在新分頁打開 yuanziifamily 的規則頁</p>
+</div>
+
+<div class="step">
+<h2><span class="step-num">3</span> 貼上規則(在 Firebase 頁面裡)</h2>
+<p>a. 點編輯區任何位置<br>b. 長按 → <b>全選</b><br>c. 按 <b>刪除</b>(清成空白)<br>d. 長按空白處 → <b>貼上</b>(這次是乾淨的了)<br>e. 按右上 <b>發布</b></p>
+</div>
+
+<div class="step">
+<h2><span class="step-num">4</span> 測試</h2>
+<button onclick="window.open('https://wayuanzi-web.github.io/family-hub/firebase-test.html', '_blank')">🔥 開啟檢測頁測試</button>
+</div>
+
+<script>
+async function copyRule() {
+  const text = document.getElementById('rule').textContent;
+  try {
+    await navigator.clipboard.writeText(text);
+    const btn = document.getElementById('btn1');
+    btn.textContent = '✅ 已複製!(現在按 2 打開 Firebase)';
+    btn.className = 'big done';
+  } catch(e) {
+    // 舊瀏覽器fallback
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    document.getElementById('btn1').textContent = '✅ 已複製!';
+    document.getElementById('btn1').className = 'big done';
+  }
+}
+</script>
+</body>
+</html>
