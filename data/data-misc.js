@@ -1,5 +1,5 @@
 /* ⛏️ 資料考古 — 自 v2.3 bundle (commit f82bfb3) 還原 | 2026-08-02 | 原壓縮變數: Xm */
-const DATA_XM_5 = {
+const FLAVOR_PICK_GUIDE = {
   "chocolate": {
     "t": "🍫 巧克力怎麼選?",
     "b": [
@@ -61,7 +61,7 @@ const DATA_XM_5 = {
 };
 
 /* ⛏️ 資料考古 — 自 v2.3 bundle (commit f82bfb3) 還原 | 2026-08-02 | 原壓縮變數: uy */
-const DATA_UY_3 = {
+const PACKING_LISTS = {
   "home": {
     "n": "回程打包",
     "ic": "🧳",
@@ -176,7 +176,7 @@ const DATA_UY_3 = {
 };
 
 /* ⛏️ 資料考古 — 自 v2.3 bundle (commit f82bfb3) 還原 | 2026-08-02 | 原壓縮變數: dy */
-const DATA_DY_4 = {
+const BUY_DEADLINES = {
   "byId": {
     "victorinox": {
       "dLeft": 3,
@@ -252,7 +252,7 @@ const DATA_DY_4 = {
 };
 
 /* ⛏️ 資料考古 — 自 v2.3 bundle (commit f82bfb3) 還原 | 2026-08-02 | 原壓縮變數: Zt */
-const DATA_ZT_1 = {
+const MICHELIN_BADGES = {
   "1": {
     "label": "米其林一星 ⭐",
     "color": "#F0C674"
@@ -296,7 +296,7 @@ const DATA_ZT_1 = {
 };
 
 /* ⛏️ 資料考古 — 自 v2.3 bundle (commit f82bfb3) 還原 | 2026-08-02 | 原壓縮變數: wn */
-const DATA_WN_2 = {
+const SYNC_STATE_SNAPSHOT = {
   "_listeners": {},
   "_status": {
     "user": null,

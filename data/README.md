@@ -65,11 +65,11 @@
 
 | 常數 | 項/鍵 | 大小 | 內容 | 原變數 |
 |---|---|---|---|---|
-| `DATA_XM_5` | 5 | 1.3K | keys: chocolate,knife,cheese,cosmetic,kitchen | Xm |
-| `DATA_UY_3` | 2 | 0.9K | keys: home,away | uy |
-| `DATA_DY_4` | 2 | 0.6K | keys: byId,byCat | dy |
-| `DATA_ZT_1` | 10 | 0.4K | keys: 1,2,3,b,p | Zt |
-| `DATA_WN_2` | 15 | 0.4K | keys: _listeners,_status,_pendingPushTimer,_dirtyKeys,subscribe | wn |
+| `FLAVOR_PICK_GUIDE` | 5 | 1.3K | 口味選購指南(巧克力/刀/起司/保養/廚具怎麼選) | Xm |
+| `PACKING_LISTS` | 2 | 0.9K | 打包清單(出發/回程,含必託運規則) | uy |
+| `BUY_DEADLINES` | 2 | 0.6K | 採購倒數引擎(每品項最晚購買日/城市) | dy |
+| `MICHELIN_BADGES` | 10 | 0.4K | 米其林星等/500盤標籤設定 | Zt |
+| `SYNC_STATE_SNAPSHOT` | 15 | 0.4K | Firebase同步層狀態快照(執行時物件,僅供參考) | wn |
 
 ## 備註
 
